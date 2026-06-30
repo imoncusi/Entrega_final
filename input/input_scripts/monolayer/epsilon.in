@@ -1,0 +1,12 @@
+&INPUTPP
+    prefix = 'mos2monorel'
+    outdir = './mos2monorel/'
+/
+
+&ENERGY_GRID
+    smeartype = 'gauss'
+    intersmear = 0.002
+    wmin = 0.0
+    wmax = 30.0
+    nw = 1000
+/

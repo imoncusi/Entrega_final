@@ -1,0 +1,57 @@
+&control
+    calculation = 'scf',
+    prefix = 'mos2bulk',
+    outdir = './mos2bulk/',
+    pseudo_dir = './pseudos/',
+    etot_conv_thr = 1.0d-5,
+    forc_conv_thr = 1.0d-4,
+    verbosity   = 'high',
+/
+
+&system
+    ibrav=0,
+    nat=6, 
+    ntyp=2, 
+    ecutwfc=40,
+    ecutrho = 400,
+    occupations = 'smearing',
+    smearing = 'mv',
+    degauss = 0.02,
+    noncolin = .true.,
+    lspinorb = .true.
+
+/
+
+&electrons
+    conv_thr=1.0d-8
+    mixing_beta = 0.3,
+    electron_maxstep = 200,
+/
+
+&ions
+    ion_dynamics = 'bfgs'
+/
+
+&cell
+    cell_dofree='all'
+/
+
+ATOMIC_SPECIES
+  Mo  95.95  Mo.UPF
+  S   32.06  S.UPF
+
+CELL_PARAMETERS (angstrom)
+3.1840   0.0000   0.0000
+-1.5920  2.7574   0.0000
+0.0000   0.0000  12.30
+
+ATOMIC_POSITIONS (crystal)
+Mo               0.5527781685        0.0451528793        0.2500000000
+Mo              -0.2099862815        0.2995445251        0.7500000000
+S                0.8780804148        0.6994186802        0.1284721447
+S                0.8780804148        0.6994186802        0.3715278553
+S                0.4504736417        0.6281826176        0.6255098565
+S                0.4504736417        0.6281826176        0.8744901435
+
+K_POINTS (automatic)
+  6 6 6 1 1 1

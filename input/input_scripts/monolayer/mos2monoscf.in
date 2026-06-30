@@ -1,0 +1,43 @@
+&control
+    calculation = 'scf'
+    prefix = 'mos2monorel'
+    outdir = './mos2monorel/'
+    pseudo_dir = './pseudos/'
+    verbosity = 'high'
+/
+
+&system
+    ibrav=0,
+    nat=3,
+    ntyp=2,
+    ecutwfc=40,
+    ecutrho=400,
+    occupations='smearing',
+    smearing='mv',
+    degauss=0.02,
+    noncolin= .true.,
+    lspinorb= .true.
+/
+
+&electrons
+    conv_thr=1.0d-8
+    mixing_beta=0.3
+    electron_maxstep=200
+/
+
+ATOMIC_SPECIES
+Mo 95.95 Mo.UPF
+S  32.06 S.UPF
+
+CELL_PARAMETERS (angstrom)
+3.1840   0.0000   0.0000
+-1.5920  2.7574   0.0000
+0.0000   0.0000  18.15
+
+ATOMIC_POSITIONS (crystal)
+Mo 0.3333319773 0.6666639546 0.0868542419
+S  0.6666506829 0.3333013648 0.0017359946
+S  0.6666506738 0.3333013466 0.1719722054
+
+K_POINTS (automatic)
+6 6 1 0 0 0
